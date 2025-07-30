@@ -12,6 +12,9 @@ taxonomies:
 
 menu:
     main:
+        - name: Sevices
+          url: pages/services/
+          weight: 5
         - name: Books
           url: books/
           weight: 5 
@@ -44,7 +47,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    MainSections: ["services","books","courses","papers","data"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -54,12 +57,15 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Professor Dr von Igelfeld
-          subtitle: "I am a Professor in the Institute of Romance Philology at the University of Regensburg, Germany. My research focuses on Portuguese irregular verbs. I was a doctoral student of Professor Dr Dieter Vogelsang in Munich, and later a second assistant of Professor Walter Schoeffler-Henschell at the University of Wiesbaden."
+          title: Hyunmin Kim, Ph.D. 
+          subtitle: "I am a bioinformatician at Case Western Reserve University in Ohio, with over two decades of experience in computational biology. My research focuses on synthetic in silico RNA/DNA sequencing targetting 3D-genomics and RNA-processing  and the integration of heterogeneous multi-modal data. Previously, I served as research faculty at the University of Colorado School of Medicine, a staff scientist at the Cleveland Clinic, and CTO of a biotech startup. I have supported numerous grant-funded projects and collaborated on challenging problems — from mapping non-reference 'Dinosaur' genomes to interpreting exploratory data against known biological references. I am now building the next phase of my career as an innovative and independent scientific leader."
+
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
           buttons:
+            - name: Services
+              url: pages/services/
             - name: Papers
               url: papers/
             - name: Data

@@ -1,5 +1,4 @@
 ---
 title: "UMAP Plots"
 ---
-
 {{< umap >}}

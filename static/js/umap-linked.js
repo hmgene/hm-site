@@ -98,8 +98,10 @@ function linkPlots(div1, div2) {
 
 
 window.addEventListener('DOMContentLoaded', async () => {
-    await drawUMAPPlot('umap1-container', "{{ .Site.BaseURL }}data/umap1.csv", 'blue');
-    await drawUMAPPlot('umap2-container', "{{ .Site.BaseURL }}data/umap2.csv", 'red');
+    const baseUrl = document.getElementById("base-url").dataset.baseurl;
+    console.log(baseUrl)
+    await drawUMAPPlot('umap1-container', baseUrl+"data/umap1.csv", 'blue');
+    await drawUMAPPlot('umap2-container', baseUrl+"data/umap2.csv", 'red');
 
     const div1 = document.getElementById('umap1-container');
     const div2 = document.getElementById('umap2-container');

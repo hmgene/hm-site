@@ -47,5 +47,8 @@ disableAnchoredHeadings: false
 > PI: Marry H. Schweitzer: https://molecularpaleo.wordpress.ncsu.edu/people/mary-h-schweitzer/
 ![fig](fossilc.png)
 
-
+## CoreA, Coreulatory Association Project
+>The core-regulatory circuitry (CRC) is a fundamental cellular program that orchestrates the expression of core transcription factor genes, crucial for determining cell or tissue identity. The CRCs are composed of networks between super enhancers and their target genes. However, existing bioinformatics tools for CRC analysis need to be extended to accept 3D-genomics data, which is essential for comprehensive understanding of the previously unobservable details. In this study, we revised the existing algorithms and suggested incorporating 3D genomic data to enhance the prediction and interpretation of CRC outcomes. By reproducing the published datasets we demonstrated the enhanced accuracy of our approach, showcasing its potential application in more general gene regulatory profiling for various diseases and cancers. Our findings highlight the significance of considering 3D genomic information in CRC analysis, opening new avenues for exploring gene regulation mechanisms and improving our understanding of complex biological processes.
+> link https://github.com/hmgene/CoreA
+![fig](corea.png)
 

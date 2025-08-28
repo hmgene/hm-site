@@ -1,0 +1,20 @@
+<div>
+  <select id="csv1-select">
+    {{ range (readDir "assets/data") }}
+      {{ if (hasSuffix .Name ".csv") }}
+        <option value="/data/{{ .Name }}">{{ .Name }}</option>
+      {{ end }}
+    {{ end }}
+  </select>
+
+  <select id="csv2-select">
+    {{ range (readDir "assets/data/kdata") }}
+      {{ if (hasSuffix .Name ".csv") }}
+        <option value="/data/kdata/{{ .Name }}">{{ .Name }}</option>
+      {{ end }}
+    {{ end }}
+  </select>
+
+  <button id="load-plots">Load Plots</button>
+</div>
+

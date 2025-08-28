@@ -1,0 +1,18 @@
+<select id="csv1-select">
+  {{ range (readDir "data") }}
+    {{ if (strings.HasSuffix .Name ".csv") }}
+      <option value="{{ "/data/" | relURL }}{{ .Name }}">{{ .Name }}</option>
+    {{ end }}
+  {{ end }}
+</select>
+
+<select id="csv2-select">
+  {{ range (readDir "data/kdata") }}
+    {{ if (strings.HasSuffix .Name ".csv") }}
+      <option value="{{ "/data/kdata/" | relURL }}{{ .Name }}">{{ .Name }}</option>
+    {{ end }}
+  {{ end }}
+</select>
+
+<button id="load-plots">Load Plots</button>
+

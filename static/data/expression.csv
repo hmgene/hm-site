@@ -1,0 +1,9 @@
+gene,condition,expression
+GeneA,Control,5
+GeneA,Treated,12
+GeneB,Control,8
+GeneB,Treated,7
+GeneC,Control,3
+GeneC,Treated,9
+GeneD,Control,15
+GeneD,Treated,14

@@ -1,5 +1,5 @@
 baseURL: "https://hmgene.github.io/hmgene/hm-site/" 
-title: Moritz-Maria von Igelfeld
+title: Hyunmin Kim, Ph.D 
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -12,6 +12,9 @@ taxonomies:
 
 menu:
     main:
+        - name: Projects
+          url: projects/
+          weight: 5
         - name: Sevices
           url: pages/services/
           weight: 5
@@ -64,6 +67,8 @@ params:
           imageWidth: 160
           imageHeight: 160
           buttons:
+            - name: Projects
+              url: projects/
             - name: Services
               url: pages/services/
             - name: Papers

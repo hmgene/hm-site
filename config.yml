@@ -12,6 +12,8 @@ taxonomies:
 
 menu:
     main:
+        - name: Posts
+          url: posts/
         - name: Projects
           url: projects/
           weight: 5
@@ -24,8 +26,6 @@ menu:
         - name: Papers
           url: papers/
           weight: 2
-        - name: Courses
-          url: courses/
           weight: 3
         - name: Data
           url: data/
@@ -35,8 +35,8 @@ menu:
           weight: 6
 
 params:
-    description: "This website hosts Moritz-Maria von Igelfeld's research papers, books, course materials, data, curriculum vitae, and contact information."
-    author: Moritz-Maria von Igelfeld
+    description: "This website hosts Hyunmin Kim's research papers, project, curriculum vitae, and contact information."
+    author: Hyunmin Kim
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -50,7 +50,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["services","books","courses","papers","data"]
+    MainSections: ["projects","services","books","courses","papers","data"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -67,6 +67,8 @@ params:
           imageWidth: 160
           imageHeight: 160
           buttons:
+            - name: Posts
+              url: posts/
             - name: Projects
               url: projects/
             - name: Services
@@ -77,8 +79,6 @@ params:
               url: data/
             - name: Books
               url: books/
-            - name: Courses
-              url: courses/
             - name: Tags
               url: tags/
             - name: Archive

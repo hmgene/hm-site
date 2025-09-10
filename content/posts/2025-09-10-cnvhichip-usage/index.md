@@ -1,49 +1,56 @@
 ---
-title: "Lectures at the Villa of Reduced Circumstances"
-date: 2003-03-10
+title: "Hic vs HiChIP using CNV-HiChIP Tools - Lab Meeting "
+date: 2025-09-10
 aliases: 
-    - /courses/course2/slides4.pdf
-    - /courses/course2/slides1.pdf
-    - /courses/course2/slides3.pdf
-    - /courses/course2/slides2.pdf
-    - /courses/course2/notes3.pdf
-    - /courses/course2/notes4.pdf
-    - /courses/course2/ps3.pdf
-    - /courses/course2/ps4.pdf
-    - /courses/course1/quiz1.pdf
-    - /courses/course1/quiz2.pdf
-    - /courses/course2/quiz3.pdf
-    - /courses/course2/quiz4.pdf
-    - /courses/course1/ps1.pdf
-tags: ["Romance languages","philology","irregular verbs","Spanish","Portuguese"]
-author: "Moritz-Maria von Igelfeld"
-description: "This graduate course presents classical results in Romance philology." 
-summary: "This graduate course presents classical results in Romance philology. it focuses especially on Portugese and Spanish irregular verbs." 
+tags: ["cnv-hichip", "usage"]
+author: "Hyunmin Kim"
+description: "Usage of CNV HiChIP Tools." 
+summary: "Run with toy example."
 cover:
-    image: "course1.png"
-    alt: "Villa of Reduced Circumstances"
+    image: "igv_snapshot_mg63_hicvshichip1d.png"
+    alt: "Hic vs Hichip"
     relative: true
 editPost:
-    URL: "https://github.com/pmichaillat/hugo-website"
-    Text: "Course portal"
+    URL: "https://github.com/hmgene/hm-site"
+    Text: "Posts"
 showToc: true
 disableAnchoredHeadings: false
 
 ---
 
-## Introduction
+## Prepare mcool Files
+```
+    ## input.bam 
+    i=input.bam
+    o=collated
 
-This course covers research topics related to Romance philology. It focuses especially on Portugese and Spanish irregular verbs. It tries to answer several questions: 
+    mamba activate hm-tools
+    samtools collate -@ 8 $i -o $o.bam
+    hm bam2pair $o.bam | hm pair2mcool - > $o.mcool 
+```
 
-+ Why are there irregular verbs? 
-+ How are Portuguese irregular verbs different from Spanish irregular verbs? 
-+ What is the role of Latin and Greek in these irregularities? 
-+ What about irregular verbs in other Romance languages?
-    + Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. 
-    + Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    + Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    + Excepteur sint occaecat cupidatat non proident.
+## Make bedGraph Files
+```
+    i=mg63_hic_chr8
+    ## use 1d density
+    bamToBed -i $i.collated.bam | hm bed2bg - 1k | gzip -c > $i.1kden.bedGraph.gz 
+
+    ## use 3d loop 
+    hm mcool2bg $i.mcool 1k | gzip -c > $i.1kloop.bedGraph.gz
+
+```
+
+## CNV-aware Peak calling
+```
+    i=mg63_hichip_chr8
+    cnv prepare $i.1kden.bedGraph.gz | cnv peak - > $i.peak
+    cnv calculate $i.peak 20k > $i.cnv
+
+    intersectBed -a <( gunzip -dc $n.bedGraph.gz) -b  $n.peak.bed  -v |\
+            cnv prepro - $e | cnv cnvl2 - 20k cnv_l2_sum | gzip -c > $n.cnv.bedGraph.gz
+
+
+```
     
 Sunt in culpa qui officia deserunt mollit anim id est laborum.
 

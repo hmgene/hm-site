@@ -34,7 +34,7 @@ My work focuses on challenging problems such as:
 
 ## CNV-HiChIP Tools Outline
 ```
-    cnv prepare    # prepare sequence biases GC, Mappability, Restriction Engymes
+    cnv prepro     # prepare sequence biases GC, Mappability, Restriction Engymes
     cnv peak       # CNV-aware peak caller 
     cnv calculate  # CNV calculator
 
@@ -66,12 +66,25 @@ My work focuses on challenging problems such as:
 ## CNV-aware Peak calling
 ```
     i=mg63_hichip_chr8
-    cnv prepare $i.1kden.bedGraph.gz | cnv peak - > $i.peak
-    cnv calculate $i.peak 20k > $i.cnv
+    cnv prepro
+    prepro <1kbp.bedGraph> <re=uniform>
 
-    intersectBed -a <( gunzip -dc $n.bedGraph.gz) -b  $n.peak.bed  -v |\
-            cnv prepro - $e | cnv cnvl2 - 20k cnv_l2_sum | gzip -c > $n.cnv.bedGraph.gz
+    cnv calculate
+    calculate <prepro> [cnv_bin=20000] [method=cnv_l2_sum]
+      prepro          Preprocessed input file (use cnv prepro) 
+      cnv_bin         Bin size for CNV calculation (default: 20000)
+      method          CNV modeling method (default: cnv_l2_sum)
+          cnv_l2_sum  Aggregated fine model using log2 fold change
+          cnv_rd_sum  Aggregated fine model using residuals
+          cnv_l2      Coarse model using log2 fold change
+          cnv_rd      Coarse model using residuals
 
+
+    cnv prepro $i.1kden.bedGraph.gz  uniform | cnv calculate - 20k > $i.cnv
+
+    cnv prepro $i.1kden.bedGraph.gz uniform | cnv peak - > $i.peak.bed
+    intersectBed -a <( gunzip -dc $1.1kden.bedGraph.gz ) -b  $i.peak.bed  -v |\
+            cnv prepro - uniform | cnv calculate - 20k | gzip -c > $n.cnv_nopeak.bedGraph.gz
 
 ```
 

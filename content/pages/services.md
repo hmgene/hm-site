@@ -1,24 +1,24 @@
 ---
 title: "Bioinformatics Services"
 ---
-**Business Plan:**
-The core would operate on a <u>value-based service model</u>, focusing on delivering meaningful results rather than billing strictly by the hour. Users would have flexible options:
-- Hourly: Junior or senior bioinformatics level processing.
-- Project-based: Flat fees per project (e.g., bulk RNA-seq $1,000, single-cell RNA-seq $3,000, GWAS $2,000, etc.).
-- Subscription models: Comprehensive support from data generation to publication and grant submission, billed as a percentage of effort over 6 or 12 months.
+###
+I offer two service models:
+- Project-based model: Charges 10–20% of my effort per project, covering services from data analysis to the final publication.
+- Hourly model: Flat-rate service with up-to-date or custom solutions (starting around $100/hour, adjustable).
 
-**Pricing:**
-For typical projects, costs are calculated per sample based on QC, value, and anticipated impact, 
-generally ranging from $1,000 to $5,000 per project. 
-More complex or large-scale projects would be priced proportionally, e.g., based on the percentage of effort over a year.
+Pricing is explained transparently based on three factors:
+- Gain: Value of the data or insights generated.
+- Cost Savings: Efficiency improvements via software or workflow optimization.
+- Risk Reduction: Quality control of the data, considering our current infrastructure conditions.
 
-**Sustainability:**
-Based on current research activity and anticipated demand, I have already secured a 15% effort contract for a year. I expect at least two such long-term contracts soon, with the remaining 55% of my effort available for additional projects. 
-This would generate sufficient revenue to cover operational costs, including personnel, computational resources, and software licenses.
+I have already applied this model to a 15% effort contract per PI/project this year, and I anticipate several similar contracts will be available in the near future.
 
-**My value**
-By prioritizing high-impact projects and maintaining flexible pricing models, the core would remain financially sustainable while providing maximum value to the research community.
-I would be happy to provide a more detailed financial projection or usage estimate if needed.
+I expect that revenue could increase to cover up to 100% of my effort next year, and I am confident in identifying what is most valuable and attractive for each PI’s project.
+
+I would be happy to discuss the details further at your convenience. Thank you.
+
+Hyunmin
+
 
 ### 🔍 Search Services
 
